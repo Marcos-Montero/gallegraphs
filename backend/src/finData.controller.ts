@@ -3,7 +3,7 @@ import {FinantialsService} from './finantials.service';
 import {Range} from "./model";
 
 @Controller()
-//@UseInterceptors(CacheInterceptor)
+@UseInterceptors(CacheInterceptor)
 @CacheTTL(6000)
 export class FinDataController {
     constructor(private readonly appService: FinantialsService) {
