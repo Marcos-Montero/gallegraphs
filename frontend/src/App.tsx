@@ -1,6 +1,7 @@
 import ChartExample from './components/ChartExample/ChartExample'
 import { Header } from './components/Header/Header'
 import { SearchBar } from './components/SearchBar/SearchBar'
+import { Summary } from './components/Summary/Summary'
 
 const App = () => {
   return (
@@ -8,6 +9,7 @@ const App = () => {
       <Header />
       <SearchBar />
       <ChartExample />
+      <Summary />
     </div>
   )
 }

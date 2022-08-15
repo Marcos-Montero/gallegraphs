@@ -11,6 +11,10 @@ export const SearchContainer = styled.div`
   > button {
     padding: 5px;
     border-radius: 10px;
+    &:hover {
+      cursor: pointer;
+      background: #484848;
+    }
   }
   > input {
     background: none;
