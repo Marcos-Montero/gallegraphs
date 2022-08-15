@@ -1,10 +1,13 @@
 import {Injectable} from '@nestjs/common';
 import * as yahooFinance from 'yahoo-finance';
 import {Range} from "./model";
+const { queryApi } = require('sec-api');
+
 
 @Injectable()
-export class AppService {
+export class FinantialsService {
     constructor() {
+        queryApi.setApiKey('b644796f1e41e728bfc3fe39627de327d2289f50a02bebfbe22462ac433a1a45');
     }
 
     getQuote(symbol: string): any {
@@ -37,6 +40,28 @@ export class AppService {
                 // console.log(quotes);
             },
         );
+    }
+
+    async getSharesOutstanding(symbol: string) {
+        const query = {
+            "query": {
+                "query_string": {
+                    "query": "ticker:AAPL AND formType:\"10-Q\""
+                }
+            },
+            "from": "0",
+            "size": "1",
+            "sort": [
+                {
+                    "filedAt": {
+                        "order": "desc"
+                    }
+                }
+            ]
+        };
+
+        return await queryApi.getFilings(query);
+
     }
 
     findTimeRage(range: Range): Date {
