@@ -1,19 +1,13 @@
-import logoGallega from './assets/gallega.png'
-import styled from 'styled-components'
+import ChartExample from './components/ChartExample/ChartExample'
+import { Header } from './components/Header/Header'
+import { SearchBar } from './components/SearchBar/SearchBar'
 
-const IconContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-`
 const App = () => {
   return (
     <div className="App">
-      <IconContainer>
-        <img src={logoGallega} alt="logo La Gallega" width={100} />
-      </IconContainer>
-      <h1>La Gallega</h1>
+      <Header />
+      <SearchBar />
+      <ChartExample />
     </div>
   )
 }
