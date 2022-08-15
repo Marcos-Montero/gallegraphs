@@ -21,3 +21,5 @@ frontend/*.local
 *.njsproj
 *.sln
 *.sw?
+/backend/node_modules/
+/backend/dist/
