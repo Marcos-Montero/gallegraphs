@@ -9,13 +9,17 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "dayjs": "^1.11.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-plotly.js": "^2.5.1",
     "styled-components": "^5.3.5"
   },
   "devDependencies": {
+    "@types/plotly.js": "^2.12.2",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
+    "@types/react-plotly.js": "^2.5.1",
     "@types/styled-components": "^5.1.26",
     "@vitejs/plugin-react": "^2.0.1",
     "typescript": "^4.6.4",
