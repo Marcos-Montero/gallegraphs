@@ -6,6 +6,44 @@ Time Scopes : 1month (30 days), 6months, 1 year, 5 years, maximum available
 
 1) price (time series graph)
 2) current financial and statistical data
+"marketCap"
+"trailingPE"
+"forwardPE"
+"sharesOutstanding"
+"sharesShort"
+"sharesPercentSharesOut"
+"heldPercentInsiders"
+"shortRatio"
+"shortPercentOfFloat"
+
+"bookValue"
+"priceToBook"
+"netIncomeToCommon"
+"trailingEps"
+"forwardEps"
+"pegRatio"
+"lastDividendValue"
+
+"totalCash"
+"totalCashPerShare"
+"ebitda"
+"totalDebt"
+"quickRatio"
+"currentRatio"
+"totalRevenue"
+"debtToEquity"
+"revenuePerShare"
+"returnOnAssets"
+"returnOnEquity"
+"grossProfits"
+"freeCashflow"
+"operatingCashflow"
+"earningsGrowth"
+"revenueGrowth"
+"grossMargins"
+"ebitdaMargins"
+"operatingMargins"
+"profitMargins"
 
 
 ##EDGAR (SEC): 
