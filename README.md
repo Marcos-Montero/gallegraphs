@@ -62,5 +62,15 @@ Where the ########## is the entity’s 10-digit Central Index Key (CIK), includi
 "BERKSHIRE HATHAWAY INC" = https://data.sec.gov/api/xbrl/companyfacts/CIK0001067983.json
 
 1) revenue
-2) earnings per share
-3)
+"facts": {
+    "us-gaap": {"Revenues": {
+                        "units": {
+                                "USD": [
+                                        {
+                                            "end": "2007-12-31",
+                                            "val": 118245000000
+                                        }
+                                        ]
+                                    }
+                }           }  
+            }
