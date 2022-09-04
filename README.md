@@ -74,3 +74,7 @@ Where the ########## is the entity’s 10-digit Central Index Key (CIK), includi
                                     }
                 }           }  
             }
+
+##Testing
+Quote request: http://localhost:3000/quote?symbol=AAPL
+Historical request: http://localhost:3000/historical?symbol=AAPL
