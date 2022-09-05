@@ -7,3 +7,4 @@ services:
     ports:
       #ports=HOST:CONTAINER
       - "3000:3000"
+    restart: unless-stopped

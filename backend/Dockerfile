@@ -5,10 +5,11 @@ FROM node:16.17-alpine3.15
 WORKDIR /usr/src/app
 
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
-COPY --chown=node:node package*.json ./
+COPY package*.json ./
 
 RUN npm ci
 
-COPY --chown=node:node . .
+COPY . .
 
-USER node
+#run it
+CMD [ "sh", "-c", "npm run start"]
