@@ -8,3 +8,12 @@ services:
       #ports=HOST:CONTAINER
       - "3000:3000"
     restart: unless-stopped
+  #frontend
+  vite-frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      #ports=HOST:CONTAINER
+      - "3001:5173"
+    restart: unless-stopped

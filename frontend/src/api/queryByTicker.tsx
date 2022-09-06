@@ -8,7 +8,7 @@ export const queryByTicker = async (ticker: string) => {
       },
     },
   )
-  const res2 = await fetch(`http://192.168.0.102:3000/quote?symbol=${ticker}`, {
+  const res2 = await fetch(`http://localhost:3000/quote?symbol=${ticker}`, {
     headers: {
       'Content-Type': 'application/json',
       'Access-Control-Allow-Origin': '*',
