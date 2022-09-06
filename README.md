@@ -82,3 +82,6 @@ Historical request: http://localhost:3000/historical?symbol=AAPL
 
 ##Starting docker-compose
 $ docker-compose up --build -d
+
+##Vite dockerization speciffics
+https://stdworkflow.com/1499/vite-network-use-host-to-expose
