@@ -16,10 +16,20 @@ const getSummary = async (ticker: string) => {
   });
   return await res.json();
 };
+const getFinancials = async (ticker: string) => {
+  const res = await fetch(`http://localhost:3000/financials?symbol=${ticker}`, {
+    headers: {
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "*",
+    },
+  });
+  return await res.json();
+};
 
 export const queryByTicker = async (ticker: string) => {
   const priceData = await getPrices(ticker);
   const summaryData = await getSummary(ticker);
+  const financialsData = await getFinancials(ticker);
   return { priceData, summaryData: filterQuote(summaryData) };
 };
 const filterQuote = (summaryData: any) => {
