@@ -1,7 +1,6 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const SearchContainer = styled.div`
-  background: #383838;
   border-radius: 8px;
   display: flex;
   align-items: center;
@@ -19,11 +18,11 @@ export const SearchContainer = styled.div`
   > input {
     background: none;
     border: none;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid white;
     &:focus {
       border: none;
       border-bottom: gray 2px solid;
       outline: none;
     }
   }
-`
+`;

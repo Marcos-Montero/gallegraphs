@@ -17,9 +17,10 @@ body {
   justify-content: center;
   width: 100vw;
   overflow-x: hidden;
-  f
+  background: #333;
 }
 
 #root {
   width: 100vw;
+  color: white;
 }

@@ -1,9 +1,10 @@
 import dayjs from "dayjs";
 import { useEffect, useState } from "react";
 import Plot from "react-plotly.js";
+import styled from "styled-components";
 import { useTicker } from "../../context/tickerContext";
 import { PriceChartContainer } from "./style";
-
+const PlotStyled = styled(Plot)``;
 const PriceChart = () => {
   const { priceData } = useTicker();
   const [xValues, setX] = useState<string[]>();
@@ -73,10 +74,11 @@ const PriceChart = () => {
       config: {},
     });
   }, [priceData]);
+
   return (
     <PriceChartContainer>
       <h3>Price Chart</h3>
-      <Plot
+      <PlotStyled
         data={figure && figure.data}
         layout={figure && figure.layout}
         onUpdate={(figure) => setFigure(figure)}

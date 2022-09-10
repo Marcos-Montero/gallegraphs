@@ -43,12 +43,15 @@ type Summary =
       profitMargins?: string;
     }
   | undefined;
+type tickerState = "empty" | "data" | "loading";
 type PriceData = undefined | PriceLine[];
 type Context = {
   priceData: PriceData;
   summary: Summary;
   setPriceData: (priceData: PriceData) => void;
   setSummary: (summary: Summary) => void;
+  tickerState: tickerState;
+  setTickerState: (tickerState: tickerState) => void;
 };
 const TickerContext = createContext<Context | undefined>(undefined);
 
@@ -59,9 +62,17 @@ type Props = {
 export const TickerProvider: FC<Props> = ({ children }) => {
   const [priceData, setPriceData] = useState<undefined | PriceData>(undefined);
   const [summary, setSummary] = useState<undefined | Summary>(undefined);
+  const [tickerState, setTickerState] = useState<tickerState>("empty");
   return (
     <TickerContext.Provider
-      value={{ priceData, setPriceData, summary, setSummary }}
+      value={{
+        priceData,
+        setPriceData,
+        summary,
+        setSummary,
+        tickerState,
+        setTickerState,
+      }}
     >
       {children}
     </TickerContext.Provider>
