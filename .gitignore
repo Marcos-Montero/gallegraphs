@@ -12,6 +12,9 @@ frontend/dist
 frontend/dist-ssr
 frontend/*.local
 
+#SEC local dev files
+SEC/venv
+
 # Editor directories and files
 .vscode/*
 .idea
