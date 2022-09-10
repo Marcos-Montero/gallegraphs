@@ -7,7 +7,8 @@ def index():
     if request.method=='GET':
 #getting the url argument       
         symbol = request.args.get('symbol')
-        result = get_financials(symbol)
+        result = jsonify(get_financials(symbol))
+        result.headers.add("Access-Control-Allow-Origin", "*")
         return result
     else:
         return jsonify({'Error':"This is a GET API method"})
