@@ -25,19 +25,19 @@ services:
       dockerfile: Dockerfile
     ports:
       #ports=HOST:CONTAINER
-      - "3001:5173"
+      - "3001:3001"
     restart: unless-stopped
 
-  java-backend:
-    container_name: java-gallega-backend
-    restart: always
-    build: ./docker
-    working_dir: /app
-    command: 'mvn clean install spring-boot:run'
-    volumes:
-      - ./:/app
-      - ~/.m2:/root/.m2
-    ports:
-      # external:internal
-      - "8080:8080"
+  # java-backend:
+  #   container_name: java-gallega-backend
+  #   restart: always
+  #   build: ./docker
+  #   working_dir: /app
+  #   command: 'mvn clean install spring-boot:run'
+  #   volumes:
+  #     - ./:/app
+  #     - ~/.m2:/root/.m2
+  #   ports:
+  #     # external:internal
+  #     - "8080:8080"
 
