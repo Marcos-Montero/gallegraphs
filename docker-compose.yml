@@ -15,7 +15,7 @@ services:
       dockerfile: Dockerfile
     ports:
       #ports=HOST:CONTAINER
-      - "3002:3000"
+      - "3003:3003"
     restart: unless-stopped
 
   #frontend
