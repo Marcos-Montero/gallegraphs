@@ -1,4 +1,4 @@
-import PriceChart from "../../components/PriceChart/PriceChart";
+import PriceChart from "../../components/Charts/PriceChart/PriceChart";
 import { Summary } from "../../components/Summary/Summary";
 import { useTicker } from "../../context/tickerContext";
 import { LandingDisplay } from "../LandingDisplay/LandingDisplay";
