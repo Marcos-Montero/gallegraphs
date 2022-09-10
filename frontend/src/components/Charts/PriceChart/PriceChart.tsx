@@ -2,7 +2,7 @@ import dayjs from "dayjs";
 import { useEffect, useState } from "react";
 import Plot from "react-plotly.js";
 import styled from "styled-components";
-import { useTicker } from "../../context/tickerContext";
+import { useTicker } from "../../../context/tickerContext";
 import { PriceChartContainer } from "./style";
 const PlotStyled = styled(Plot)``;
 const PriceChart = () => {
@@ -30,8 +30,8 @@ const PriceChart = () => {
         },
       ],
       layout: {
-        width: 620,
-        height: 440,
+        width: 1080,
+        height: 720,
         xaxis: {
           autorange: true,
           range: [dayjs().subtract(20, "year"), dayjs()],
