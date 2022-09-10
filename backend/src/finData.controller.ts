@@ -11,7 +11,7 @@ export class FinDataController {
 
     @Get('quote')
     getQuote(@Query('symbol') symbol): any {
-        return this.appService.getQuote(symbol);
+        return this.appService.getQuote(symbol)
     }
 
     @Get('historical')
@@ -20,7 +20,7 @@ export class FinDataController {
         @Query('period') period?: string,
         @Query('range') range?: Range,
     ): any {
-        return this.appService.getHistorical(symbol, period,range);
+        return this.appService.getHistorical(symbol, period, range);
     }
 
     @Get('sharesOutstanding')
