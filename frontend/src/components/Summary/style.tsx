@@ -1,7 +1,6 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const SummaryContainer = styled.div`
-  height: 200px;
   width: 100%;
   overflow-x: scroll;
   overflow-y: hidden;
@@ -10,4 +9,4 @@ export const SummaryContainer = styled.div`
   justify-content: start;
   flex-direction: column;
   flex-wrap: wrap;
-`
+`;

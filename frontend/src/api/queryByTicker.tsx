@@ -1,26 +1,29 @@
-export const queryByTicker = async (ticker: string) => {
-  const res1 = await fetch(
-    `http://localhost:3000/historical?symbol=${ticker}`,
-    {
-      headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*',
-      },
-    },
-  )
-  const res2 = await fetch(`http://localhost:3000/quote?symbol=${ticker}`, {
+const getPrices = async (ticker: string) => {
+  const res = await fetch(`http://localhost:3000/historical?symbol=${ticker}`, {
     headers: {
-      'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': '*',
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "*",
     },
-  })
-  const priceData = await res1.json()
-  const summaryData = await res2.json()
+  });
+  return res.json();
+};
+const getSummary = async (ticker: string) => {
+  const res = await fetch(`http://localhost:3000/quote?symbol=${ticker}`, {
+    headers: {
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "*",
+    },
+  });
+  return await res.json();
+};
 
-  return { priceData, summaryData: filterQuote(summaryData) }
-}
+export const queryByTicker = async (ticker: string) => {
+  const priceData = await getPrices(ticker);
+  const summaryData = await getSummary(ticker);
+  return { priceData, summaryData: filterQuote(summaryData) };
+};
 const filterQuote = (summaryData: any) => {
-  const { summaryDetail, defaultKeyStatistics, financialData } = summaryData
+  const { summaryDetail, defaultKeyStatistics, financialData } = summaryData;
   return {
     marketCap: summaryDetail.marketCap,
     trailingPE: summaryDetail.trailingPE,
@@ -58,5 +61,5 @@ const filterQuote = (summaryData: any) => {
     ebitdaMargins: financialData.ebitdaMargins,
     operatingMargins: financialData.operatingMargins,
     profitMargins: financialData.profitMargins,
-  }
-}
+  };
+};
