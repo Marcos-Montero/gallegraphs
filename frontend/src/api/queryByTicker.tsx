@@ -17,7 +17,8 @@ const getSummary = async (ticker: string) => {
   return await res.json();
 };
 const getFinancials = async (ticker: string) => {
-  const res = await fetch(`http://localhost:3000/financials?symbol=${ticker}`, {
+  const res = await fetch(`http://localhost:3003/financials?symbol=${ticker}`, {
+    mode: "cors",
     headers: {
       "Content-Type": "application/json",
       "Access-Control-Allow-Origin": "*",
@@ -30,7 +31,7 @@ export const queryByTicker = async (ticker: string) => {
   const priceData = await getPrices(ticker);
   const summaryData = await getSummary(ticker);
   const financialsData = await getFinancials(ticker);
-  return { priceData, summaryData: filterQuote(summaryData) };
+  return { priceData, summaryData: filterQuote(summaryData), financialsData };
 };
 const filterQuote = (summaryData: any) => {
   const { summaryDetail, defaultKeyStatistics, financialData } = summaryData;

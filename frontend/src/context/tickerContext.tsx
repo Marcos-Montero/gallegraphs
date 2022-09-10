@@ -48,6 +48,8 @@ type PriceData = undefined | PriceLine[];
 type Context = {
   priceData: PriceData;
   summary: Summary;
+  financialsData: any;
+  setFinancialsData: (financialsData: any) => void;
   setPriceData: (priceData: PriceData) => void;
   setSummary: (summary: Summary) => void;
   tickerState: tickerState;
@@ -62,6 +64,9 @@ type Props = {
 export const TickerProvider: FC<Props> = ({ children }) => {
   const [priceData, setPriceData] = useState<undefined | PriceData>(undefined);
   const [summary, setSummary] = useState<undefined | Summary>(undefined);
+  const [financialsData, setFinancialsData] = useState<undefined | any>(
+    undefined
+  );
   const [tickerState, setTickerState] = useState<tickerState>("empty");
   return (
     <TickerContext.Provider
@@ -72,6 +77,8 @@ export const TickerProvider: FC<Props> = ({ children }) => {
         setSummary,
         tickerState,
         setTickerState,
+        financialsData,
+        setFinancialsData,
       }}
     >
       {children}

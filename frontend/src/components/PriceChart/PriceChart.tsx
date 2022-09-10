@@ -7,8 +7,6 @@ import { PriceChartContainer } from "./style";
 const PlotStyled = styled(Plot)``;
 const PriceChart = () => {
   const { priceData } = useTicker();
-  const [xValues, setX] = useState<string[]>();
-  const [yValues, setY] = useState<number[]>();
   const [figure, setFigure] = useState<any>();
 
   useEffect(() => {
@@ -20,16 +18,14 @@ const PriceChart = () => {
       acc.push(v.close);
       return acc;
     }, []);
-    setX(tickerTimes);
-    setY(tickerPrices);
     setFigure({
       data: [
         {
           name: "",
           type: "scatter",
           mode: "lines",
-          x: xValues,
-          y: yValues,
+          x: tickerTimes,
+          y: tickerPrices,
           marker: { color: "red" },
         },
       ],

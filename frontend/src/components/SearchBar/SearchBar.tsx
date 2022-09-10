@@ -5,17 +5,26 @@ import { SearchContainer } from "./style";
 
 export const SearchBar = () => {
   const [searchValue, setSearchValue] = useState<string>("");
-  const { setPriceData, setSummary, tickerState, setTickerState } = useTicker();
+  const {
+    setPriceData,
+    setSummary,
+    tickerState,
+    setTickerState,
+    setFinancialsData,
+  } = useTicker();
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setSearchValue(e.target.value);
   };
   const search = async () => {
     setTickerState("loading");
-    const { priceData, summaryData } = await queryByTicker(searchValue);
-    console.log(priceData);
+    const { priceData, summaryData, financialsData } = await queryByTicker(
+      searchValue.toUpperCase()
+    );
     setPriceData(priceData);
     setSummary(summaryData);
+    setFinancialsData(financialsData);
     setTickerState("data");
+    console.log(financialsData);
   };
   return (
     <SearchContainer>
