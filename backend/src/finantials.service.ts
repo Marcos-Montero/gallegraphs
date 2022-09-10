@@ -1,7 +1,8 @@
 import {Injectable} from '@nestjs/common';
 import * as yahooFinance from 'yahoo-finance';
 import {Range} from "./model";
-const { queryApi } = require('sec-api');
+
+const {queryApi} = require('sec-api');
 
 
 @Injectable()
@@ -10,22 +11,29 @@ export class FinantialsService {
         queryApi.setApiKey('b644796f1e41e728bfc3fe39627de327d2289f50a02bebfbe22462ac433a1a45');
     }
 
-    getQuote(symbol: string): any {
-        return yahooFinance.quote(
-            {
-                symbol: symbol,
-                modules: [
-                    'price',
-                    'summaryDetail',
-                    'financialData',
-                    'earnings',
-                    'defaultKeyStatistics',
-                ], // see the docs for the full list
-            },
-            function (err, quotes) {
-                console.log(quotes);
-            },
-        );
+    async getQuote(symbol: string): Promise<any> {
+        try {
+
+            let response = yahooFinance.quote(
+                {
+                    symbol: symbol,
+                    modules: [
+                        'price',
+                        'summaryDetail',
+                        'financialData',
+                        'earnings',
+                        'defaultKeyStatistics',
+                    ], // see the docs for the full list
+                },
+                function (err, quotes) {
+                    console.log(quotes);
+                },
+            );
+            return response;
+        } catch (e) {
+            console.error(e)
+            return 'bad';
+        }
     }
 
     getHistorical(symbol: string, period?: string, range?: Range): any {

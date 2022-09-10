@@ -27,3 +27,5 @@ SEC/__pycache__
 *.sw?
 /backend/node_modules/
 /backend/dist/
+/backend-java/target/
+/target/

@@ -1,0 +1,29 @@
+openapi: 3.0.3
+info:
+  title: FinApi
+  description:  Backend for FrontEnd
+  version: 1.0.0
+paths:
+  /quote:
+    get:
+      summary: Get a quote
+      description: Get quote for a ticker
+      operationId: getQuote
+      parameters:
+        - name: symbol
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: Stock
+
+        '400':
+          description: Invalid symbol
+        '404':
+          description: Symbol not found
