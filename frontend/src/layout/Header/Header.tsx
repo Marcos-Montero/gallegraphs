@@ -8,7 +8,8 @@ export const Header = () => {
     <>
       <HeaderContainer>
         <RowContainer>
-          <h1>Gallegraphs</h1>
+          <LogoGallega width={60} style={{ transform: "scaleX(-1)" }} />
+          <h1>G</h1>
           <LogoGallega width={60} />
         </RowContainer>
         <RowContainer>
