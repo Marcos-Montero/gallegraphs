@@ -8,6 +8,16 @@ services:
       #ports=HOST:CONTAINER
       - "3000:3000"
     restart: unless-stopped
+  #SEC api handler
+  sec-handler:
+    build:
+      context: ./SEC
+      dockerfile: Dockerfile
+    ports:
+      #ports=HOST:CONTAINER
+      - "3002:3000"
+    restart: unless-stopped
+
   #frontend
   vite-frontend:
     build:

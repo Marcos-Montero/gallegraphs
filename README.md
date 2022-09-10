@@ -61,7 +61,11 @@ Where the ########## is the entity’s 10-digit Central Index Key (CIK), includi
 "Apple Inc." = https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json
 "BERKSHIRE HATHAWAY INC" = https://data.sec.gov/api/xbrl/companyfacts/CIK0001067983.json
 
+We can retrieve the CIK-ticker mapping here:
+https://www.sec.gov/include/ticker.txt
+
 1) revenue
+```json
 "facts": {
     "us-gaap": {"Revenues": {
                         "units": {
@@ -74,14 +78,24 @@ Where the ########## is the entity’s 10-digit Central Index Key (CIK), includi
                                     }
                 }           }  
             }
+```
 
 ##Testing
-Quote request: http://localhost:3000/quote?symbol=AAPL
-Historical request: http://localhost:3000/historical?symbol=AAPL
+Quote request:
+http://localhost:3000/quote?symbol=AAPL
 
+Historical request:
+http://localhost:3000/historical?symbol=AAPL
+
+SEC financials request:
+http://localhost:3000/financials?symbol=AAPL
 
 ##Starting docker-compose
+```bash
 $ docker-compose up --build -d
+```
 
 ##Vite dockerization speciffics
+```bash
 https://stdworkflow.com/1499/vite-network-use-host-to-expose
+```
