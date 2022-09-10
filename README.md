@@ -83,8 +83,12 @@ https://www.sec.gov/include/ticker.txt
 ##Testing
 Quote request:
 http://localhost:3000/quote?symbol=AAPL
-Historical request: http://localhost:3000/historical?symbol=AAPL
 
+Historical request:
+http://localhost:3000/historical?symbol=AAPL
+
+SEC financials request:
+http://localhost:3000/financials?symbol=AAPL
 
 ##Starting docker-compose
 ```bash

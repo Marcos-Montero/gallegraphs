@@ -1,15 +1,10 @@
-# Using alpine node base image reduces the image syze about 2x
-FROM node:16.17-alpine3.15
+FROM python:3.10
 
-# Create app directory
-WORKDIR /usr/src/app
+COPY requirements.txt ./requirements.txt
 
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
-COPY package*.json ./
+COPY request_handler.py ./request_handler.py
+COPY main.py ./main.py
 
-RUN npm ci
+RUN pip install -r requirements.txt
 
-COPY . .
-
-#run it
-CMD [ "sh", "-c", "npm run start"]
+CMD ["python", "./main.py"]

@@ -14,6 +14,7 @@ frontend/*.local
 
 #SEC local dev files
 SEC/venv
+SEC/__pycache__
 
 # Editor directories and files
 .vscode/*
