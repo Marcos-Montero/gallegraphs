@@ -9,15 +9,9 @@ export const DataDisplay = () => {
   return (
     <DataDisplayContainer>
       {tickerState === "empty" && (
-        <LandingDisplay>
-          <h3>Search for a ticker!</h3>
-        </LandingDisplay>
+        <LandingDisplay>Search for a ticker!</LandingDisplay>
       )}
-      {tickerState === "loading" && (
-        <LandingDisplay>
-          <h3>loading...</h3>
-        </LandingDisplay>
-      )}
+      {tickerState === "loading" && <LandingDisplay>loading...</LandingDisplay>}
       {tickerState === "data" && (
         <>
           <PriceChart />
