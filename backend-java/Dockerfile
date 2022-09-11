@@ -1,5 +1,6 @@
-FROM openjdk:17.0.2-jdk
+FROM maven:3-openjdk-18
+COPY . .
+RUN mvn -v
+RUN mvn clean install
 EXPOSE 8080
-ADD target/*.jar .
-RUN mv *.jar app.jar
-CMD exec java -jar app.jar
+CMD ["mvn", "spring-boot:run"]

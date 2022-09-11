@@ -90,6 +90,9 @@ http://localhost:3000/historical?symbol=AAPL
 SEC financials request:
 http://localhost:3000/financials?symbol=AAPL
 
+Java-Backend quote request:
+http://localhost:8080/quote?symbol=AAPL
+
 ##Starting docker-compose
 ```bash
 $ docker-compose up --build -d

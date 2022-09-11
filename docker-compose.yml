@@ -28,16 +28,16 @@ services:
       - "3001:3001"
     restart: unless-stopped
 
-  # java-backend:
-  #   container_name: java-gallega-backend
-  #   restart: always
-  #   build: ./docker
-  #   working_dir: /app
-  #   command: 'mvn clean install spring-boot:run'
-  #   volumes:
-  #     - ./:/app
-  #     - ~/.m2:/root/.m2
-  #   ports:
-  #     # external:internal
-  #     - "8080:8080"
+  java-backend:
+    container_name: java-gallega-backend
+    restart: always
+    build:
+      context: ./backend-java
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/app
+      - ~/.m2:/root/.m2
+    ports:
+      # external:internal
+      - "8080:8080"
 
